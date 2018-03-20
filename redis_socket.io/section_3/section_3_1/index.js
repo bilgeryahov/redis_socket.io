@@ -1,5 +1,6 @@
 const express = require('express');
 const config  = require('./config.json');
+const process = require('process');
 const redis   = require('redis');
 
 const app = express();
@@ -17,4 +18,4 @@ app.get('/', (req, res) => {
 	});
 });
 
-app.listen(8080);
+app.listen(process.argv[2]);
